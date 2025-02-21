@@ -16,6 +16,7 @@ public class Message {
     private String message;
     private Timestamp created_at;
 
+
     public Timestamp getCreated_at() {
         return created_at;
     }
