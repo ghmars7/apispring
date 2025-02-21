@@ -18,6 +18,10 @@ public class MessageService {
         return messageRepository.findAll();
     }
 
+    public List<Message> getMessageByName(String name) {
+        return messageRepository.findByUsername(name);
+    }
+
     public void addMessage(Message message) {
         messageRepository.save(message);
     }

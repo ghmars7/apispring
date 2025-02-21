@@ -2,10 +2,7 @@ package org.example.apispring.controller;
 
 import org.example.apispring.model.Message;
 import org.example.apispring.service.MessageService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,9 @@ public class MessageController {
         this.messageService.addMessage(message);
     }
 
+    @GetMapping("findByUsername/{username}")
+    public List<Message> getMessagesByName(@PathVariable("username") String name) {
+        return messageService.getMessageByName(name);
+    }
 
 }
