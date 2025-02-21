@@ -1,11 +1,10 @@
 package org.example.apispring.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
+
 
 @Entity
 public class Message {
@@ -14,6 +13,8 @@ public class Message {
     private int id;
     private String username;
     private String message;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp created_at;
 
 
